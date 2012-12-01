@@ -1,0 +1,23 @@
+include "109.mayu"	# 109 キーボード設定
+
+include "default.mayu"	# Emacs ライクなさまざまな設定
+
+window AllWindow /.*/ : EmacsEdit
+
+key C-J		= $ToggleIME		# IME ON/OFF をするキーの指定
+key C-O = Apps
+
+window	VisualStudio /devenv\.exe/ : Global
+key C-M = C-Space
+window	NetBeans /netbeans64\.exe/ : Global
+key C-M = C-Space
+
+#xming
+window Xming /Xming\.exe:Xming X/ : KeymapDefault
+key C-J		= $ToggleIME		# IME ON/OFF をするキーの指定
+window XLaunch /XLaunch\.exe/ : KeymapDefault
+key C-J		= $ToggleIME		# IME ON/OFF をするキーの指定
+window Poderosa /Poderosa\.exe/ : KeymapDefault
+key C-J		= $ToggleIME		# IME ON/OFF をするキーの指定
+window PuttyJP /.*puttyjp\.exe:PuTTY/ : KeymapDefault
+key C-J		= $ToggleIME		# IME ON/OFF をするキーの指定

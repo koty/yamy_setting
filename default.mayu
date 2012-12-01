@@ -74,11 +74,11 @@ keymap Global
    key C-S-V		= &WindowMoveVisibly	# ƒEƒBƒ“ƒhƒE‚ğŒ©‚¦‚éˆÊ’u‚ÖˆÚ“®
  endif
 
- if ( KBD109 ) and ( ! KBD104on109 )
-   key *”¼Šp/‘SŠp	= *Esc			# Esc ‚Æ”¼Šp/‘SŠp‚Ì“ü‚ê‘Ö‚¦
-   key *E0”¼Šp/‘SŠp	= *Esc			# Esc ‚Æ”¼Šp/‘SŠp‚Ì“ü‚ê‘Ö‚¦
-   key *Esc		= *”¼Šp/‘SŠp		#	V
- endif
+# if ( KBD109 ) and ( ! KBD104on109 )
+#   key *”¼Šp/‘SŠp	= *Esc			# Esc ‚Æ”¼Šp/‘SŠp‚Ì“ü‚ê‘Ö‚¦
+#   key *E0”¼Šp/‘SŠp	= *Esc			# Esc ‚Æ”¼Šp/‘SŠp‚Ì“ü‚ê‘Ö‚¦
+#   key *Esc		= *”¼Šp/‘SŠp		#	V
+# endif
 
  if ( KBD109 )
    mod control += ‰p”				# ‰p”‚ğ Control ‚É
@@ -129,6 +129,9 @@ keymap Global
 #
 
 keymap	KeymapDefault = &Default
+ mod shift += E0RShift
+ key *E0RShift = *LShift
+
  if ( KBD109 )
    mod control += ‰p”				# ‰p”‚ğ Control ‚É
    key *‰p”		= *LControl		#	V

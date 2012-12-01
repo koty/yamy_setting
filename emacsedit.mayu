@@ -60,14 +60,17 @@ keymap	EmacsMove : Global
 
 
 keymap	EmacsEdit : EmacsMove
-keymap2	EmacsMark : EmacsEdit = $EmacsMark/cancel &KeymapWindow
+#keymap2	EmacsMark : EmacsEdit = $EmacsMark/cancel &KeymapWindow
+keymap2	EmacsMark : EmacsEdit = &KeymapWindow
 keymap2 EmacsMarkEscape : EmacsMark = &KeymapParent
 
 keymap2	EmacsC-X : EmacsEdit
  event prefixed		= &HelpMessage("EmacsEdit C-x-", "C-x u\tundo")
  event before-key-down	= &HelpMessage
  key *U			= C-Z					# UNDO
-
+ key *C-S		= C-S					# OVERWRITE
+ key *C-C		= $WindowClose			# WINDOWCLOSE
+ key *C-P		= C-A					# SELECT-ALL
 keymap2 EmacsC-U0_9C-U : Global \
 		= &Repeat((&KeymapWindow), 100) &HelpMessage &Variable(0, 0)
  key C-G	= &HelpMessage &Variable(0, 0) &Ignore
@@ -109,7 +112,7 @@ keymap	EmacsEdit
  key C-J		= Return				# RETURN
  key C-K		= $EmacsEdit/kill-line			# s––‚Ü‚Åíœ
  key C-M		= Return				# RETURN
- key C-O		= Return Left				# ˆês‘‚â‚·
+# key C-O		= Return Left				# ˆês‘‚â‚·
  if ( !GANA ) key C-T	= $EmacsEdit/transpose-chars		# •¶š“ü‚ê‘Ö‚¦
  key C-W		= C-X					# CUT
  key M-W		= C-C					# COPY
